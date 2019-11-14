@@ -99,6 +99,20 @@ class ComplianceRouterSpec extends PlaySpec with GuiceOneAppPerTest {
       status(home2) mustBe NOT_FOUND
     }
 
+    "render the comliances when url ends with a gdpr, uninspectable-data, unprotected-devices and has url parameters" in {
+      val request = FakeRequest(GET, "/compliance/gdpr?name=gpr").withHeaders(HOST -> "localhost:9000").withCSRFToken
+      val home:Future[Result] = route(app, request).get
+      status(home) mustBe NOT_FOUND
+
+      val request1 = FakeRequest(GET, "/compliance/uninspectable-data?name=uninspectable-data").withHeaders(HOST -> "localhost:9000").withCSRFToken
+      val home1:Future[Result] = route(app, request1).get
+      status(home1) mustBe NOT_FOUND
+
+      val request2 = FakeRequest(GET, "/compliance/unprotected-devices?name=apr").withHeaders(HOST -> "localhost:9000").withCSRFToken
+      val home2:Future[Result] = route(app, request2).get
+      status(home2) mustBe NOT_FOUND
+    }
+
     "render the comliances when url ends with a incorrect parameter" in {
       val request = FakeRequest(GET, "/compliance/smpr").withHeaders(HOST -> "localhost:9000").withCSRFToken
       val home:Future[Result] = route(app, request).get

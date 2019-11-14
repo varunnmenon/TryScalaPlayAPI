@@ -1,0 +1,1 @@
+["sbt.Task[scala.collection.immutable.Map[java.lang.String, scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]]",{"2.12.10":{"hashes":[["/Users/varunmenon/Desktop/Altada/TryScalaPlayAPI/play-samples-play-scala-rest-api-example/project/Common.scala","885ad3f484a71fb6a51eb92b2c247f88590dafcf"]],"lastModifiedTimes":[]}}]

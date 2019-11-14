@@ -12,3 +12,8 @@ After the project is opened, you have to click on "Add Configuration". When the 
 Once the Add Configuration Screen is open, click on + sign on the top right and then select "sbt Task". Type run in "NAME:" and "TASK:" and then click on OK.
 
 Now you are all set to run the project.
+
+
+To run tests, open the test folder -> controllers ->  select the file "ComplianceRouterSpec"
+
+Right click on the class name "ComplianceRouterSpec" and select "Run ComplianceRouterSpec". The IDE will build and run all the test cases specified in the given file. In this project, ScalaTest + Play is used for writing and running the test cases.
